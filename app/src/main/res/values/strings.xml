@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">SM 60</string>
+    <string name="hello_world">Hello My Friend</string>
+    <string name="negative">Enter SMS Message:</string>
+    <string name="positive">Send SMS</string>
+    <string name="land_msg">Land Scape</string>
+    <string name="dragdop">Click on the image to drag drop</string>
+    <string name="title_activity_positive">+++</string>
+    <string name="title_activity_negative">---</string>
+    <string name="decision">Are you sure, you wanted to make this
+decision</string>
+    <string name="positive_button">+ive</string>
+    <string name="negative_button">-ive</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="g1_title">စိတ္ခ်မႈ(၅)ခု</string>
+    <string name="g1_c1_title">ကယ္တင္ၿခင္းစိတ္ခ်မႈ</string>
+    <string name="g1_c1_content">ေယာ ၁၅း၅ သက္ေသခံေတာ္မူခ်က္ဟူမူကားဘုရားသခင္သည္ငါတို႕ကိုထာ၀ရအသက္ေပးေတာ္မူ</string>
+    <string name="g1_c2_title">ဆုေတာင္းၿခင္းစိတ္ခ်မႈ</string>
+    <string name="g1_c3_title">ေအာင္ၿမင္ၿခင္းစိတ္ခ်မႈ</string>
+    <string name="g1_c4_title">အၿပစ္လြတ္ၿခင္းစိတ္ခ်မႈ</string>
+    <string name="g1_c5_title">ပဲ့ၿပင္ၿခင္းစိတ္ခ်မႈ</string>
+    <string name="g2_title">ခရစ္ေတာ္ႏွင့္ဆက္လက္ေလွ်ာင္လွမ္းၿခင္း</string>
+    <string name="g2_c1_title">ခရစ္ေတာ္၌အသက္ရွင္ၿခင္း</string>
+    <string name="g2_c2_title">ဘုရားသခင္၏ႏႈတ္ကပတ္ေတာ္အားၿဖင့္အသက္ရွင္ၿခင္း</string>
+    <string name="g2_c3_title">ဘုရားသခင္၏၀ိညာဥ္ေတာ္အားၿဖင့္အသက္ရွင္ၿခင္း</string>
+    <string name="g2_c4_title">ယံုၾကည္ၿခင္းအားၿဖင့္အသက္ရွင္ၿခင္း</string>
+    <string name="g2_c5_title">ခ်စ္ၿခင္းေမတၱာရွိေသာအသက္တာ၌အသက္ရွင္ၿခင္း</string>
+    <string name="g2_c6_title">ခရစ္ယာန္မိတ္သဟာယ၌အသက္ရွင္ၿခင္း</string>
+    <string name="g2_c7_title">သက္ေသတစ္ဦးအေနၿဖင့္အသက္ရွင္ၿခင္း</string>
+    <string name="g2_c8_title">ရက္ေရာစြာေပးကမ္းတတ္ေသာအသက္တာ၌အသက္ရွင္ၿခင္း</string>
+</resources>

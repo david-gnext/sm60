@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item
+        android:id="@+id/g1"
+        android:title="@string/g1_title"
+        >
+        <menu>
+            <item
+                android:id="@+id/g1_c1"
+                android:title="@string/g1_c1_title" />
+            <item
+                android:id="@+id/g1_c2"
+                android:title="@string/g1_c2_title" />
+            <item
+                android:id="@+id/g1_c3"
+                android:title="@string/g1_c3_title" />
+            <item
+                android:id="@+id/g1_c4"
+                android:title="@string/g1_c4_title" />
+            <item
+                android:id="@+id/g1_c5"
+                android:title="@string/g1_c5_title" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/g2"
+        android:title="@string/g2_title">
+        <menu>
+            <item
+                android:id="@+id/g2_c1"
+                android:title="@string/g2_c1_title" />
+            <item
+                android:id="@+id/g2_c2"
+                android:title="@string/g2_c2_title" />
+            <item
+                android:id="@+id/g2_c3"
+                android:title="@string/g2_c3_title" />
+            <item
+                android:id="@+id/g2_c4"
+                android:title="@string/g2_c4_title" />
+            <item
+                android:id="@+id/g2_c5"
+                android:title="@string/g2_c5_title" />
+            <item
+                android:id="@+id/g2_c6"
+                android:title="@string/g2_c6_title" />
+            <item
+                android:id="@+id/g2_c7"
+                android:title="@string/g2_c7_title" />
+            <item
+                android:id="@+id/g2_c8"
+                android:title="@string/g2_c8_title" />
+        </menu>
+    </item>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Import" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Slideshow" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Tools" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_you"
+                android:icon="@drawable/ic_menu_youtube"
+                android:title="You Tubw" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
