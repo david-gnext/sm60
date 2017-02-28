@@ -1,5 +1,8 @@
 package com.example.david.tutorial;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -79,6 +82,8 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        Fragment fragment = null;
+        Bundle args = new Bundle();
 
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -86,6 +91,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
+            fragment = new G1();
+            args.putString(G1.QOUTE_ID,getApplicationContext().getString(R.string.g1_c1_content));
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -96,6 +103,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.g1_c2) {
 
         }
+        fragment.setArguments(args);
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.frag_content,fragment).commit();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
