@@ -99,9 +99,17 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.g1_c1) {
-
+            fragment = new G1();
+            args.putString(G1.QOUTE_ID,getApplicationContext().getString(R.string.g1_c1_content));
         } else if (id == R.id.g1_c2) {
-
+            fragment = new G1();
+            args.putString(G1.QOUTE_ID,getApplicationContext().getString(R.string.g1_c2_content));
+        } else if (id == R.id.g1_c3) {
+            fragment = new G1();
+            args.putString(G1.QOUTE_ID,getApplicationContext().getString(R.string.g1_c3_content));
+        } else if (id == R.id.g1_c4) {
+            fragment = new G1();
+            args.putString(G1.QOUTE_ID,getApplicationContext().getString(R.string.g1_c4_content));
         }
         fragment.setArguments(args);
         FragmentManager fragmentManager = getFragmentManager();
