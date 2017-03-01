@@ -9,6 +9,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.view.menu.MenuView;
 import android.text.Layout;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,10 +20,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private float x1,x2;
+    static final int MIN_DISTANCE = 150;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +54,14 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+        //fragment back
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStackImmediate();
+        } else {
+            super.onBackPressed();
+        }
+        //navigation drawer back
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -78,6 +91,28 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        switch(event.getAction())
+        {
+            case MotionEvent.ACTION_DOWN:
+                x1 = event.getX();
+                break;
+            case MotionEvent.ACTION_UP:
+                x2 = event.getX();
+                float deltaX = x2 - x1;
+                if (Math.abs(deltaX) > MIN_DISTANCE)
+                {
+                    //left to right
+                }
+                else
+                {
+                    // consider as something else - a screen tap for example
+                }
+                break;
+        }
+        return super.onTouchEvent(event);
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -86,36 +121,22 @@ public class MainActivity extends AppCompatActivity
         Bundle args = new Bundle();
 
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-            fragment = new G1();
-            args.putString(G1.QOUTE_ID,getApplicationContext().getString(R.string.g1_c1_content));
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.g1_c1) {
-            fragment = new G1();
-            args.putString(G1.QOUTE_ID,getApplicationContext().getString(R.string.g1_c1_content));
-        } else if (id == R.id.g1_c2) {
-            fragment = new G1();
-            args.putString(G1.QOUTE_ID,getApplicationContext().getString(R.string.g1_c2_content));
-        } else if (id == R.id.g1_c3) {
-            fragment = new G1();
-            args.putString(G1.QOUTE_ID,getApplicationContext().getString(R.string.g1_c3_content));
-        } else if (id == R.id.g1_c4) {
-            fragment = new G1();
-            args.putString(G1.QOUTE_ID,getApplicationContext().getString(R.string.g1_c4_content));
-        }
+        String[] content_id = getResources().getResourceName(item.getItemId()).split("\\/");
+        String content = content_id[1] + "_content";
+        Log.d("Tag",content);
+        //display relative id content
+        int resId = getResources().getIdentifier(content,"string",getPackageName());
+        fragment = new G1();
+        args.putString(G1.QOUTE_ID, getResources().getString(resId));
+        TextView hid = (TextView) findViewById(R.id.main_text);
+        hid.setVisibility(View.INVISIBLE);
+        //start fragment
         fragment.setArguments(args);
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.frag_content,fragment).commit();
+        fragmentManager.beginTransaction().add(R.id.frag_content,fragment).addToBackStack(null).commit();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

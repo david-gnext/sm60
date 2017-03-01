@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main2"
+    android:background="@drawable/office"
+    android:backgroundTintMode="screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -15,5 +17,17 @@
     <FrameLayout
         android:id="@+id/frag_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/main_text"
+            android:text="တရား ၆း၆ ယေန႔ငါမွာထားေသာစကားကိုႏွလံုးသြင္းေလာ့။"
+            android:padding="30dp"
+            android:background="#4dffffff"
+            android:textColor="#de2626"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
 </RelativeLayout>
