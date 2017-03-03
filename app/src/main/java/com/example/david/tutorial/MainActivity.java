@@ -24,7 +24,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    TextView hid;
     private float x1,x2;
     static final int MIN_DISTANCE = 150;
     @Override
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+        hid = (TextView) findViewById(R.id.main_text);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity
         if (fm.getBackStackEntryCount() > 0) {
             fm.popBackStackImmediate();
         } else {
+            hid.setVisibility(View.VISIBLE);
             super.onBackPressed();
         }
         //navigation drawer back
@@ -126,14 +128,15 @@ public class MainActivity extends AppCompatActivity
         Log.d("Tag",content);
         //display relative id content
         int resId = getResources().getIdentifier(content,"string",getPackageName());
+        int titleId = getResources().getIdentifier(content_id[1]+"_title","string",getPackageName());
         fragment = new G1();
         args.putString(G1.QOUTE_ID, getResources().getString(resId));
-        TextView hid = (TextView) findViewById(R.id.main_text);
         hid.setVisibility(View.INVISIBLE);
         //start fragment
         fragment.setArguments(args);
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction().add(R.id.frag_content,fragment).addToBackStack(null).commit();
+        getSupportActionBar().setTitle(getResources().getString(titleId));
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
